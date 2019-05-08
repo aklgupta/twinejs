@@ -1,74 +1,33 @@
-## twinejs
+### (Original) twinejs
 
 by Chris Klimas, Leon Arnott, Daithi O Crualaoich, Ingrid Cheung, Thomas Michael
 Edwards, Micah Fitch, Juhana Leinonen, Michael Savich, and Ross Smith
 
-### SYNOPSIS
 
-This is a port of Twine to a browser and Electron app. See
-[twinery.org](https://twinery.org) for more info.
 
-The story formats in minified format under `story-formats/` exist in separate
-repositories:
+# This Fork
+Minor customization of the tool [twinejs](https://github.com/klembot/twinejs).
+Uses "Twine 2.3.1 Web" as it's base
+Intended to enhance the Twine Editor. Some changes might not be helpful in delevoping "Twine Stories", as the intented function here is to make a better editor, and hopefully use it for more than just Stories.
 
--   [Harlowe](https://bitbucket.org/_L_/harlowe)
--   [Paperthin](https://github.com/klembot/paperthin)
--   [Snowman](https://github.com/klembot/snowman)
--   [SugarCube](https://bitbucket.org/tmedwards/sugarcube)
+Also, I would mostly be focusing on the "Web" build, not the electron build, thus in cause of conflict, the web build will be given preference.
 
-### INSTALL
+This project started as with very minor changes in a separate repo, [twinejs-custom](https://github.com/aklgupta/twinejs-custom), but soont he changes became too big and hacky, so I decided to form a proper fork.
 
-Run `npm install` at the top level of the directory to install all goodies.
+## Reason/Description
+- I believe that it will help editing much easier, and prevent error
+- Allow more tags color, as the vanilla twine had very limited option
+- Make the content in the editor more *visual*
+- I use Twine to make quick flow chart for easy project management, instead of its intended use, thus these changes help my purpose, while should help others as well
 
-### BUILDING
+## TO-DO
+Priority Changes
+- Migrate the already amde changes from [twinejs](https://github.com/klembot/twinejs)
+- Add support for a cloud-based auto-backup mechanism (Current candidate include Git Repo)
 
-Run `npm start` to begin serving a development version of Twine to
-http://localhost:8080. This server will automatically update with changes you
-make.
-
-To create a release, run `npm run build`. Finished files will be found under
-`dist/`. In order to build Windows apps on OS X or Linux, you will need to have
-[Wine](https://www.winehq.org/) and [makensis](http://nsis.sourceforge.net/)
-installed. A file named `2.json` is created under `dist/` which contains
-information relevant to the autoupdater process, and is currently posted to
-https://twinery.org/latestversion/2.json.
-
-To run the app in an Electron context, run `npm run electron`. `npm run electron-dev` is a bit faster as it skips minification.
-
-`npm run lint` and `npm test` will lint and test the source code respectively.
-
-`npm run pot` will create a POT template file for localization at
-`src/locale/po/template.pot`. See Localization below for more information.
-
-`npm run clean` will delete existing files in `build/` and `dist/`.
-
-### LOCALIZATION
-
-Would you like to help localize Twine for another language? Awesome! You don't
-need to know JavaScript to do so. Here's how it works:
-
-1. Download
-   [template.pot](https://github.com/klembot/twinejs/blob/master/src/locale/po/template.pot)
-   from the repository.
-
-2. Use a translation application like [Poedit](http://poedit.net/) to create a
-   .po file with the source text translated. If you are using Poedit, get started
-   by choosing **New from POT/PO File** from the **File** menu. Make sure to name
-   your po file according to the [IETF locale naming
-   convention](https://en.wikipedia.org/wiki/IETF_language_tag) -- Poedit can help
-   suggest that as well. For example, a generic French translation should be named
-   `fr.po`, while an Australian English one would be named `en-au.po`.
-
-3. Finally, two other things are needed: an SVG-formatted image of the flag
-   that should be associated with your language, and what native speakers call the
-   language you are localizing to (e.g. Fran&ccedil;ais for French speakers).
-   [Wikimedia
-   Commons](https://commons.wikimedia.org/wiki/Category:SVG_flags_by_country) is
-   your best bet for nice-looking SVG flags. Obviously, whatever image you provide
-   must either be in the public domain or otherwise OK to use in Twine without any
-   compensation.
-
-4. If you're comfortable using Git, then you can open a pull request to have
-   your localization added. Please place it in the `src/locale/po` directory. If
-   you aren't, you can instead open a bug tracker issue and attach your PO file,
-   flag image, and language name and we'll take it from there.
+These will be very low-priority changes for me, and hence may never see light of the day. But if I ever get the chance/time to:
+- Support for keyboard shortcuts in the editor (Maybe even replace the current one with a rich-text editor, like ckeditor)
+- Add more tag colors
+- Option to set custom tag colors
+- Show Tag usage stats, with option to delete only unused tags
+- Style the Tag drop-down for the dark theme
