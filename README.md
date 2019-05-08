@@ -1,4 +1,4 @@
-### (Original) twinejs
+#### (Original) twinejs
 
 by Chris Klimas, Leon Arnott, Daithi O Crualaoich, Ingrid Cheung, Thomas Michael
 Edwards, Micah Fitch, Juhana Leinonen, Michael Savich, and Ross Smith
@@ -15,6 +15,7 @@ Also, I would mostly be focusing on the "Web" build, not the electron build, thu
 This project started as with very minor changes in a separate repo, [twinejs-custom](https://github.com/aklgupta/twinejs-custom), but soon the changes became too big and hacky, so I decided to form a proper fork.
 
 ## Changelog
+### v0.3 - Migration of v0.1+v0.2
 - Incorporated the progress from [twinejs-custom](https://github.com/aklgupta/twinejs-custom)
 	- Added more colors for the tags
 	- Tags colors are visible even in the dark theme
@@ -34,6 +35,29 @@ This project started as with very minor changes in a separate repo, [twinejs-cus
 - Added *JQuery 3.4.1* & *Select2 4.0.7-rc.0* as dependencies
 	- *Select2 4.0.6* had a bug that prevented it from closing when *focused*, thus opted for *v4.0.7-rc.0* instead
 - Added *harlowe-3.0.2* as for some reason the scripts were referencing v3.0.2 but the fork included v3.0.0
+
+## Screenshots
+**Tag Colors**
+
+![Tag Colors](../media/tag-colors.png?raw=true)
+
+
+
+**Light Theme**
+
+![Light Theme](../media/light-theme.png?raw=true)
+
+
+
+**Dark Theme**
+
+![Dark Theme](../media/dark-theme.png?raw=true)
+
+**Tag Drop-down**
+
+![Tag Drop-down](../media/tag-dropdown.png?raw=true)
+
+
 
 ## Reason/Description
 - I believe that it will help editing much easier, and prevent error
