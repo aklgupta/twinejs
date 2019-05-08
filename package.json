@@ -28,6 +28,8 @@
 		"test:watch": "jest --watch"
 	},
 	"dependencies": {
+		"jquery": "^3.4.1",
+		"select2": "^4.0.7-rc.0",
 		"blob-polyfill": "^1.0.20150320",
 		"browser-saveas": "^1.0.0",
 		"codemirror": "^5.5.0",
