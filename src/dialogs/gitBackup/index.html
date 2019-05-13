@@ -1,0 +1,77 @@
+<modal-dialog v-ref:modal :origin="origin">
+	<span slot="title">{{ 'Setup Auto-backup with Github' | say }}</span>
+
+	<template v-if="status === 'login'">
+		<div class="error">
+			<h3 style="margin-top: 0;">Warning</h3>
+			<p>
+				This feature requires your actual Github Username & Password. These Username and Password are stored in the local storage of the browser.
+				<br>
+				There is no milatiry grade security here. Please proceed with caution.
+			</p>
+		</div>
+		<hr>
+		<form @submit.prevent="checkDetails">
+			<input type="text" placeholder="{{ 'Github Username' | say }}" required v-el:username>
+			<br>
+			<br>
+			<input type="password" placeholder="{{ 'Github Password' | say }}" required v-el:password>
+			<br>
+			<br>
+			<p>
+				All your stories will be pushed to the following repo. Only the latest version will be pushed.
+				(You can always check the git commit history)
+			</p>
+			<input type="text" placeholder="{{ 'Repo Name' | say }}" required v-el:reponame>
+			<div class="buttons">
+				<button type="button" class="subtle" @click="close">Cancel</button>
+				<button type="submit" class="create"><i class="fa fa-check"></i>Confirm</button>
+			</div>
+		</form>
+	</template>
+
+	<template v-if="status === 'working'">
+		<p>
+			<i class="fa fa-circle-o-notch fa-spin"></i>
+			{{ 'Working...' | say }}
+		</p>
+	</template>
+
+	<template v-if="status === 'failure'">
+		<p>
+		{{ 'Failure! There was an error.' | say }}
+		</p>
+
+		<p>
+			{{ 'Please check that the provided information was correct, and you have a working internet connection. If the issue still persists, please try again later.' | say }}
+			<!-- {{ 'Error Message: ' | say }} -->
+			<!-- {{ errorMessage }} -->
+		</p>
+
+		<p class="buttons">
+			<button type="button" class="subtle" @click="close">{{ "Try again later" | say }}</button>
+		</p>
+	</template>
+
+	<template v-if="status === 'success'">
+		<p>
+		{{ 'Github Auto-backup has been set up' | say }}
+		</p>
+
+		<p>
+			{{ 'Your stories will automatically get backed up as per the details below' | say }}
+			<br>
+			{{ 'Github Username:' | say }} {{ gitBackup.username }}
+			<br>
+			{{ 'Github Reponame:' | say }} {{ gitBackup.reponame }}
+			<br>
+			{{ 'Repo Link:' | say }} <a href="https://github.com/{{ gitBackup.username }}/{{ gitBackup.reponame }}/">{{ gitBackup.username }}/{{ gitBackup.reponame }}</a>
+		</p>
+
+		<p class="buttons">
+			<button type="button" class="danger" @click="backupLogOut">{{ "Log Out" | say }}</button>
+			<button type="button" class="subtle" @click="backupAllStories">{{ "Force Backup All Files" | say }}</button>
+			<button type="button" class="subtle" @click="close">{{ "Close" | say }}</button>
+		</p>
+	</template>
+</modal-dialog>

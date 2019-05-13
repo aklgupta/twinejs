@@ -30,6 +30,7 @@
 	"dependencies": {
 		"jquery": "^3.4.1",
 		"select2": "^4.0.7-rc.0",
+		"octokat": "^0.10.0",
 		"blob-polyfill": "^1.0.20150320",
 		"browser-saveas": "^1.0.0",
 		"codemirror": "^5.5.0",

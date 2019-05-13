@@ -11,6 +11,7 @@ describe('pref data module', () => {
 		expect(typeof pref.state.locale).toBe('string');
 		expect(pref.state.proofingFormat).toBe('Paperthin');
 		expect(pref.state.welcomeSeen).toBe(false);
+		expect(pref.state.gitBackup).toBe(null);
 	});
 
 	test('changes settings via a UPDATE_PREF mutation', () => {

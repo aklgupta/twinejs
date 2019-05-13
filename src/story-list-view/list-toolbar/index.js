@@ -10,6 +10,9 @@ const locale = require('../../locale');
 const {prompt} = require('../../dialogs/prompt');
 const {publishArchive} = require('../../data/publish');
 const saveFile = require('../../file/save');
+const { setPref } = require('../../data/actions/pref');
+const GitBackupDialog = require('../../dialogs/gitBackup');
+
 
 module.exports = Vue.extend({
 	template: require('./index.html'),
@@ -86,6 +89,13 @@ module.exports = Vue.extend({
 			window.open('https://twinery.org/2guide');
 		},
 
+		setupGitBackup(e) {
+			new GitBackupDialog({
+				store: this.$store,
+				data: {origin: e.target}
+			}).$mountTo(document.body);
+		},
+
 		showLocale() {
 			window.location.hash = 'locale';
 		}
@@ -98,7 +108,8 @@ module.exports = Vue.extend({
 
 	vuex: {
 		actions: {
-			createStory
+			createStory,
+			setPref,
 		},
 
 		getters: {

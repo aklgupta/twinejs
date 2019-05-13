@@ -15,8 +15,17 @@ const save = require('../../../file/save');
 const {selectPassages} = require('../../../data/actions/passage');
 const {updateStory} = require('../../../data/actions/story');
 
+
+
+const { setPref } = require('../../../data/actions/pref');
+const {autobackup} = require('../../../github')
+
 module.exports = Vue.extend({
 	template: require('./index.html'),
+
+	ready(){
+		autobackup(this.story, this.$store, this.gitBackup, this.setPref);
+	},
 
 	props: {
 		story: {
@@ -107,13 +116,15 @@ module.exports = Vue.extend({
 		actions: {
 			loadFormat,
 			selectPassages,
-			updateStory
+			updateStory,
+			setPref,
 		},
 
 		getters: {
+			gitBackup: state => state.pref.gitBackup,
 			allFormats: state => state.storyFormat.formats,
 			appInfo: state => state.appInfo,
-			defaultFormatName: state => state.pref.defaultFormat
+			defaultFormatName: state => state.pref.defaultFormat,
 		}
 	}
 });

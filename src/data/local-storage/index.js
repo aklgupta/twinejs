@@ -162,6 +162,7 @@ module.exports = store => {
 			}
 
 			case 'UPDATE_PREF':
+			case 'RESET_PREF':
 				pref.save(store);
 				break;
 

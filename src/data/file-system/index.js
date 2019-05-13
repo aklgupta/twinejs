@@ -175,6 +175,7 @@ module.exports = store => {
 				break;
 			}
 
+			case 'RESET_PREF':
 			case 'UPDATE_PREF':
 				saveJson('prefs.json', state.pref);
 				break;
