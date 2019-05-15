@@ -21,6 +21,7 @@ This project started as with very minor changes in a separate repo, [twinejs-cus
   - Untested Release; Expect Bugs
 
 ### v0.3 - Migration of v0.1+v0.2- Incorporated the progress from [twinejs-custom](https://github.com/aklgupta/twinejs-custom)
+- Changes migrated:
 	- Added more colors for the tags
 	- Tags colors are visible even in the dark theme
 	- The default "gray" tag is shown in the passage block as well, like to other color tags
@@ -60,6 +61,10 @@ This project started as with very minor changes in a separate repo, [twinejs-cus
 **Tag Drop-down**
 
 ![Tag Drop-down](../media/tag-dropdown.png?raw=true)
+
+**GitHub Option**
+
+![GitHub Option](../media/github-option.png?raw=true)
 
 
 
