@@ -15,6 +15,11 @@ Also, I would mostly be focusing on the "Web" build, not the electron build, thu
 This project started as with very minor changes in a separate repo, [twinejs-custom](https://github.com/aklgupta/twinejs-custom), but soon the changes became too big and hacky, so I decided to form a proper fork.
 
 ## Changelog
+### v0.4.1
+- Added the missing CDN source for GitHub's `octokat` API wrapper
+- GitHub Repo link, in the "GitHub" dialog, now opens in a new tab now
+- In the dark theme, improved the color scheme for the `passage title` and `passage excerpt`
+
 ### v0.4
 - Implemented GitHub Login
   - Password stored as plain text in local cache
@@ -76,11 +81,13 @@ This project started as with very minor changes in a separate repo, [twinejs-cus
 
 ## TO-DO
 Priority Changes
-- Store GitHub Credentials in secure manner
+- [Feature] Store GitHub Credentials in secure manner
+- [Feature] Backup before exiting the story (both page unload & hash change)
+- [Bug] The JS minification breaks the *web* and *web-cdn* releases. Need to find some other minification tools/disable minification
 
 These will be very low-priority changes for me, and hence may never see light of the day. But if I ever get the chance/time to:
-- Support for keyboard shortcuts in the editor (Maybe even replace the current one with a rich-text editor, like ckeditor)
-- Add more tag colors
-- Option to set custom tag colors
-- Show Tag usage stats, with option to delete only unused tags
-- Style the Tag drop-down for the dark theme
+- [Feature] Support for keyboard shortcuts in the editor (Maybe even replace the current one with a rich-text editor, like ckeditor)
+- [Feature] Add more tag colors
+- [Feature] Option to set custom tag colors
+- [Feature] Show Tag usage stats, with option to delete only unused tags
+- [Feature] Style the Tag drop-down for the dark theme
